@@ -1,0 +1,26 @@
+
+development:
+ host: localhost
+ adapter: postgresql
+ encoding: unicode
+ database: task_chat
+ pool: 5
+ username: andre
+ password: pass
+
+test: &test
+ host: localhost
+ adapter: postgresql
+ encoding: unicode
+ database: task_chat_test
+ pool: 5
+ username: andre
+ password: pass
+
+production:
+ adapter: postgresql
+ encoding: unicode
+ database: task_chat_production
+ pool: 5
+ username: andre
+ password: pass
