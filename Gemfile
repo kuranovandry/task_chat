@@ -5,6 +5,9 @@ source 'https://rubygems.org'
 gem 'rails', '5.0.0.beta1'
 gem 'pg'
 gem 'puma'
+gem 'devise', github: 'plataformatec/devise', branch: 'master'
+gem 'haml-rails'
+gem 'simple_form'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
