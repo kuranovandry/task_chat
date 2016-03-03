@@ -1,14 +1,20 @@
 %html
   %head
     %meta{content: "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.1.1/tinysort.js"}
+    %script{src: "https://cdnjs.cloudflare.com/ajax/libs/tinysort/2.1.1/tinysort.charorder.js"}
     %title TaskChat
+    = action_cable_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
     = csrf_meta_tags
+    %meta{id: current_user.try(:id), name: 'current-user'}/
 
   %body
     = render 'shared/navigation'
     .row
       .col-xs-12
+        - flash.each do |key, value|
+          %div{class: "#{key}"}= value
         = yield
 

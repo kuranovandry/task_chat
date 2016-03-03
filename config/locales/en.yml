@@ -20,4 +20,12 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  logout: 'Logout'
+  workers_page: 'Workers page'
+  404: '404 Not Found'
+  worker:
+    task_to: 'Write task to:'
+  comment:
+    not_create_comment:  'You havent created a message'
+    not_create: 'Comment was not created'
+    task_from: 'Task from'

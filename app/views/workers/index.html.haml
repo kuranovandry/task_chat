@@ -1,0 +1,4 @@
+%h1= t('worker.task_to')
+%ul
+  - @workers.each do |worker|
+    %li= link_to worker.title, worker

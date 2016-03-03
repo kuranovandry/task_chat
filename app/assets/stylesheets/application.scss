@@ -1,3 +1,16 @@
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+.worker {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.comment_my {
+  background-color: #B0E0E6;
+}
+
+.comment_other {
+  background-color: #E6E6FA
+}
