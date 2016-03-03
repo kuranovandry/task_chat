@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
                               user: current_user,
                               position: calculate_position(current_user))
 
-    return if @comment.save
+    return render nothing: true, status: 201 if @comment.save
     flash[:error] = t('comment.not_create')
     render :new
   end

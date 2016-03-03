@@ -7,10 +7,9 @@ App.comments = App.cable.subscriptions.create "CommentsChannel",
       @installPageChangeCallback()
 
   received: (data) ->
-    @collection().append(data.comment) unless @userIsCurrentUser(data.comment)
+    @collection().append(data.comment)
+    location.reload()
 
-  userIsCurrentUser: (comment) ->
-    $(comment).attr('data-user-id') is $('meta[name=current-user]').attr('id')
 
   followCurrentWorker: ->
     if workerId = @collection().data('worker-id')
