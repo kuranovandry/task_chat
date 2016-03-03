@@ -1,5 +1,5 @@
-%div{style: "background-color: #{comment.position == 1 ? '#B0E0E6' : '#E6E6FA'}"}
+%div{class: call_comments_class(comment)}
   %article{'data-user-id' => comment.user.id, 'data-possition' => comment.position, 'data-created-at' => comment.created_at}
     %h3
-      Task from #{comment.user.full_name}
+      #{t('task_frome')} #{comment.user.full_name}
     %p= comment.content
