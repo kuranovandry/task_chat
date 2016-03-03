@@ -1,8 +1,9 @@
 source 'https://rubygems.org'
-
+ruby '2.2.3'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '5.0.0.beta2'
+
 gem 'sprockets-rails', github: "rails/sprockets-rails"
 gem 'pg'
 gem 'devise', github: 'plataformatec/devise', branch: 'master'
@@ -13,6 +14,7 @@ gem 'pry'
 gem 'bootstrap-sass'
 gem 'puma'
 gem 'redis'
+gem 'rails_12factor', group: :production
 
 
 gem 'sass-rails', '~> 5.0'
