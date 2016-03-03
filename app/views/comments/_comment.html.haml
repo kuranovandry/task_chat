@@ -1,5 +1,5 @@
 %div{class: call_comments_class(comment)}
   %article{'data-user-id' => comment.user.id, 'data-possition' => comment.position, 'data-created-at' => comment.created_at}
     %h3
-      #{t('task_frome')} #{comment.user.full_name}
+      #{t('task_from')} #{comment.user.full_name}
     %p= comment.content

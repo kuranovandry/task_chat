@@ -13,8 +13,6 @@ App.comments = App.cable.subscriptions.create "CommentsChannel",
     $(comment).attr('data-user-id') is $('meta[name=current-user]').attr('id')
 
   followCurrentWorker: ->
-    tinysort('section#comments>div>article', {attr:'data-created-at', order:'desc'});
-    tinysort('section#comments>div>article', {attr:'data-possition', order:'desc'});
     if workerId = @collection().data('worker-id')
       @perform 'follow', worker_id: workerId
     else

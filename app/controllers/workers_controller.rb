@@ -6,7 +6,7 @@ class WorkersController < ApplicationController
   end
 
   def show
-    @worker_comments = @worker.comments.order('position DESC, created_at DESC')
+    @worker_comments = @worker.comments.order('position, created_at DESC')
   end
 
   private

@@ -19,6 +19,6 @@ class ApplicationController < ActionController::Base
   private
 
   def record_not_found
-    render text: t('404'), status: 404
+    render status: 404
   end
 end

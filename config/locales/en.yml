@@ -28,4 +28,4 @@ en:
   comment:
     not_create_comment:  'You havent created a message'
     not_create: 'Comment was not created'
-    task_frome: 'Task from'
+    task_from: 'Task from'

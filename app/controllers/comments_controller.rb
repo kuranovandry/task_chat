@@ -3,9 +3,9 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(content: comment_content ,
-                                worker: @worker,
-                                user: current_user,
-                                position: calculate_position(current_user))
+                              worker: @worker,
+                              user: current_user,
+                              position: calculate_position(current_user))
 
     return if @comment.save
     flash[:error] = t('comment.not_create')
@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
   private
 
   def comment_content
-    params[:comment][:content] ? params[:comment][:content] : flash[:error] = t('comment.not_create_comment')
+    params[:comment].present? ? params[:comment][:content] : flash[:error] = t('comment.not_create_comment')
   end
 
   def calculate_position(current_user)
