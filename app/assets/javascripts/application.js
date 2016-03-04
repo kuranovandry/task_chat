@@ -21,4 +21,8 @@ $(document).ready(function () {
   }).on('mouseleave', '.removebutton', function () {
     $(this).find(".btn").hide();
   });
+
+  setTimeout(function() {
+    $('.alert').slideUp();
+  }, 3000);
 });
