@@ -14,7 +14,6 @@ gem 'bootstrap-sass'
 gem 'puma'
 gem 'redis'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'capistrano-rails-tail-log'
 
 
 gem 'sass-rails', '~> 5.0'

@@ -92,9 +92,6 @@ GEM
       capistrano-bundler (~> 1.1)
     capistrano-rails-console (1.0.2)
       capistrano (>= 3.1.0, < 4.0.0)
-    capistrano-rails-tail-log (0.1.0)
-      capistrano (>= 3.0)
-      capistrano-rails
     capistrano-rvm (0.1.2)
       capistrano (~> 3.0)
       sshkit (~> 1.2)
@@ -247,7 +244,6 @@ DEPENDENCIES
   capistrano-bundler
   capistrano-rails
   capistrano-rails-console
-  capistrano-rails-tail-log
   capistrano-rvm
   coffee-rails!
   devise!
