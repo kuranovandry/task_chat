@@ -3,4 +3,4 @@
 #= require_tree .
 
 @App ||= {}
-App.cable = ActionCable.createConsumer('ws://stakan.kodep.ru/cable/')
+App.cable = ActionCable.createConsumer()
