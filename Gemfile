@@ -14,7 +14,7 @@ gem 'bootstrap-sass'
 gem 'puma'
 gem 'redis'
 gem 'dotenv-rails', groups: [:development, :test]
-
+gem 'eye'
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
