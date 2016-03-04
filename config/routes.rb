@@ -5,5 +5,4 @@ Rails.application.routes.draw do
   resources :workers do
     resources :comments
   end
-  # mount ActionCable.server => '/cable'
 end
