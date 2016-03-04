@@ -6,19 +6,13 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-joker   = User.create!(first_name: 'Joker',
-                       last_name: 'Joker',
-                       email: 'Joker@mail.ru',
+joker   = User.create!(nickname: 'Joker',
                        password: 'q1w2e3q1w2e3',
                        password_confirmation: 'q1w2e3q1w2e3')
-snoop = User.create!(first_name: 'Snoop Dogg',
-                     last_name: 'Snoop Dogg',
-                     email: 'Snoop_Dogg@mail.ru',
+snoop = User.create!(nickname: 'Snoop Dogg',
                      password: 'q1w2e3q1w2e3',
                      password_confirmation: 'q1w2e3q1w2e3')
-loki  = User.create!(first_name: 'Loki',
-                     last_name: 'Loki',
-                     email: 'loki@ail.ru',
+loki  = User.create!(nickname: 'Loki',
                      password: 'q1w2e3q1w2e3',
                      password_confirmation: 'q1w2e3q1w2e3')
 Worker.create!(title: 'Snoop Dogg Task',
