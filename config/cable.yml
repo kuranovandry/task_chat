@@ -2,4 +2,5 @@ local: &local
   url: redis://192.168.33.19:6379
 
 development: *local
+production: *local
 test: *local
