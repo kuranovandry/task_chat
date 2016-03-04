@@ -13,6 +13,7 @@ gem 'pry'
 gem 'bootstrap-sass'
 gem 'puma'
 gem 'redis'
+gem 'dotenv-rails', groups: [:development, :test]
 
 
 gem 'sass-rails', '~> 5.0'

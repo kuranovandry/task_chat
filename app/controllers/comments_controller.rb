@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-  before_action :set_worker
+  before_action :set_worker, only: %i( create )
 
   def create
     @comment = Comment.create(content: comment_content ,
@@ -10,6 +10,16 @@ class CommentsController < ApplicationController
     return render nothing: true, status: 201 if @comment.save
     flash[:error] = t('comment.not_create')
     render :new
+  end
+
+  def destroy
+    @comment = Comment.find(params[:id])
+    if @comment.destroy
+      flash[:success] = t('comment.successful_destroy')
+    else
+      flash[:error] = t('comment.error_destroy')
+    end
+    redirect_to(:back)
   end
 
   private

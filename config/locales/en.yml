@@ -29,3 +29,6 @@ en:
     not_create_comment:  'You havent created a message'
     not_create: 'Comment was not created'
     task_from: 'Task from'
+    confirm: 'Are you sure?'
+    successful_destroy: 'Task was successfully removed'
+    error_destroy: 'Something is wrong. Task was not removed.'
