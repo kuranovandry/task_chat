@@ -43,6 +43,14 @@ namespace :deploy do
     execute "mv /tmp/secrets.yml #{shared_path}/config/"
     end
   end
+  task :eye do
+    on roles (:all) do
+    execute "bash -c 'source /usr/local/rvm/scripts/rvm ; rvm use 2.2.2; cd #{release_path} ; bundle exec eye stop cable > /dev/null; true'"
+    execute "bash -c 'source /usr/local/rvm/scripts/rvm ; rvm use 2.2.2; cd #{release_path} ; bundle exec eye quit && true'"
+    execute "bash -c 'source /usr/local/rvm/scripts/rvm ; rvm use 2.2.2; cd #{release_path} ; bundle exec eye l config/cable.eye; sleep 5; bundle exec eye info'"
+    end
+  end
+
   task :db_seed do
     on roles (:db) do
       within release_path do
@@ -62,13 +70,6 @@ namespace :logs do
     end
   end
 end
-task :eye do
-    on roles (:all) do
-    execute "bash -c 'source /usr/local/rvm/scripts/rvm ; rvm use 2.2.2; cd #{release_path} ; bundle exec eye stop cable > /dev/null; true'"
-    execute "bash -c 'source /usr/local/rvm/scripts/rvm ; rvm use 2.2.2; cd #{release_path} ; bundle exec eye quit && true'"
-    execute "bash -c 'source /usr/local/rvm/scripts/rvm ; rvm use 2.2.2; cd #{release_path} ; bundle exec eye l config/cable.eye; sleep 5; bundle exec eye info'"
-    end
-  end
 
 after :deploy, 'deploy:restart'
-
+after 'deploy:restart', 'deploy:eye'
