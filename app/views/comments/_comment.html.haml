@@ -1,5 +1,9 @@
-%div{class: call_comments_class(comment)}
+%div.removebutton{class: call_comments_class(comment)}
+  %div.delte_button
+    = link_to t('comment.remove'), worker_comment_url(comment.worker_id, comment), method: :delete,
+          data: { confirm: t('comment.confirm') }, class: 'btn btn-danger', style: 'display: none;'
   %article{'data-user-id' => comment.user.id, 'data-possition' => comment.position, 'data-created-at' => comment.created_at}
-    %h3
-      #{t('task_from')} #{comment.user.full_name}
+    %h4
+      #{t('task_from')} ##{comment.user.nickname}
     %p= comment.content
+
