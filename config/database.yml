@@ -22,5 +22,6 @@ production:
  encoding: unicode
  database: task_chat_production
  pool: 5
- username: andre
- password: pass
+ username: <%= ENV['DB_USER'] %>
+ password: <%= ENV['DB_PASS'] %>
+ host: <%= ENV['DB_HOST'] %>
