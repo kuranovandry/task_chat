@@ -24,7 +24,7 @@ set :rvm_ruby_version, '2.2.2'
 set :linked_files, %w{config/database.yml config/secrets.yml}
 
 # Default value for linked_dirs is []
-# set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system public/uploads}
+set :linked_dirs, %w{log tmp/pids tmp/cache tmp/sockets public/system public/uploads}
 set :hosts, 'hosts'
 
 namespace :deploy do
@@ -53,14 +53,14 @@ namespace :deploy do
     end
   end
 end
-namespace :logs do
-  desc "tail rails logs"
-  task :tail_rails do
+namespace :rails do
+  desc "Tail rails logs from server"
+  task :tail_log do
+    SSHKit.config.output_verbosity = Logger::DEBUG
     on roles(:app) do
       execute "tail -f #{shared_path}/log/#{fetch(:rails_env)}.log"
     end
   end
 end
-
 after :deploy, 'deploy:restart'
 
