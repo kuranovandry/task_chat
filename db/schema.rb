@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20160301115757) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "hstore"
 
   create_table "comments", force: :cascade do |t|
     t.integer  "worker_id"

@@ -1,4 +1,4 @@
 = form_for [ worker, Comment.new ], remote: true do |form|
-  = form.text_area :content, size: '103x5'
+  = form.text_field :content, size: '103x5', class: 'new-comment-content'
   %br
     = form.submit id: 'worker_button'

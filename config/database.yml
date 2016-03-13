@@ -5,8 +5,7 @@ development:
  encoding: unicode
  database: task_chat
  pool: 5
- username: andre
- password: pass
+ username: k41n
 
 test: &test
  host: localhost
@@ -14,14 +13,4 @@ test: &test
  encoding: unicode
  database: task_chat_test
  pool: 5
- username: andre
- password: pass
-
-production:
- adapter: postgresql
- encoding: unicode
- database: task_chat_production
- pool: 5
- username: <%= ENV['DB_USER'] %>
- password: <%= ENV['DB_PASS'] %>
- host: <%= ENV['DB_HOST'] %>
+ username: k41n

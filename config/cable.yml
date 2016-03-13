@@ -1,5 +1,5 @@
 local: &local
-  url: redis://192.168.33.19:6379
+  url: <%= ENV['REDIS_URL'] || 'redis://127.0.0.1:6379' %>
 
 development: *local
 production: *local

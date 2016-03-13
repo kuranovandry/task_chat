@@ -3,4 +3,9 @@
 #= require_tree .
 
 @App ||= {}
-App.cable = ActionCable.createConsumer('ws://stakan.kodep.ru:28080')
+App.cable = ActionCable.createConsumer("ws://#{location.hostname}:28080")
+
+$ ->
+  setTimeout ->
+    $('#comment_content').get(0).focus()
+  , 500
