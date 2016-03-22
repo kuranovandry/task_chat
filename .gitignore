@@ -24,3 +24,4 @@
 /cable.env
 /dump.rdb
 config/database.yml
+config/deploy/production.rb
