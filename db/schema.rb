@@ -24,9 +24,10 @@ ActiveRecord::Schema.define(version: 20160301115757) do
     t.text     "content"
     t.datetime "created_at",             null: false
     t.datetime "updated_at",             null: false
-    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
-    t.index ["worker_id"], name: "index_comments_on_worker_id", using: :btree
   end
+
+  add_index "comments", ["user_id"], name: "index_comments_on_user_id", using: :btree
+  add_index "comments", ["worker_id"], name: "index_comments_on_worker_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "nickname"
@@ -41,17 +42,19 @@ ActiveRecord::Schema.define(version: 20160301115757) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.index ["nickname"], name: "index_users_on_nickname", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
+
+  add_index "users", ["nickname"], name: "index_users_on_nickname", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
   create_table "workers", force: :cascade do |t|
     t.integer  "user_id"
     t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_workers_on_user_id", using: :btree
   end
+
+  add_index "workers", ["user_id"], name: "index_workers_on_user_id", using: :btree
 
   add_foreign_key "comments", "users"
   add_foreign_key "comments", "workers"

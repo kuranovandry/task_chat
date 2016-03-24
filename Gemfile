@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '5.0.0.beta2'
+gem 'rails', '5.0.0.beta3'
 gem 'sprockets-rails', github: "rails/sprockets-rails"
 gem 'pg'
 gem 'devise', github: 'plataformatec/devise', branch: 'master'
@@ -22,6 +22,9 @@ gem 'coffee-rails', github: "rails/coffee-rails"
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'foreman'
+gem 'sidekiq'
+gem 'sinatra', github: 'sinatra/sinatra', require: nil
 
 group :development, :test do
   gem 'byebug'
@@ -33,4 +36,3 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-rails-console'
 end
-

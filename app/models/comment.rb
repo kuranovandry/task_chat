@@ -5,7 +5,7 @@ class Comment < ActiveRecord::Base
   after_create_commit { relay_comment }
 
   def relay_comment
-    CommentRelayJob.perform_later(self )
+    CommentRelayJob.perform_later(self)
   end
 
 end
