@@ -8,8 +8,11 @@ App.comments = App.cable.subscriptions.create "CommentsChannel",
 
   received: (data) ->
     console.log 'data = ', data
-    @collection().append(data.comment)
-    location.reload()
+    if data.type == 'comment_deleted'
+      $("#comment_#{data.comment_id}").remove()
+    else
+      @collection().append(data.comment)
+      location.reload()
 
 
   followCurrentWorker: ->
