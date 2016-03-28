@@ -21,4 +21,12 @@ Eye.application :cable do
     check :cpu, :every => 30, :below => 80, :times => 3
     check :memory, :every => 30, :below => 2000.megabytes, :times => [3,5]
   end
+  process :sidekiq do
+    daemonize true
+    pid_file "/var/www/task_chat/current/tmp/pids/sidekiq.pid"
+    stdall "/var/www/task_chat/current/log/sidekiq.log"
+    start_command " bundle exec sidekiq -c 1"
+    stop_signals [:TERM, 5.seconds, :KILL]
+    restart_command 'kill -9 {PID}'
+  end
 end
