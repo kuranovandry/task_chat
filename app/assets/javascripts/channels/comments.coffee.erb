@@ -12,7 +12,8 @@ App.comments = App.cable.subscriptions.create "CommentsChannel",
       $("#comment_#{data.comment_id}").remove()
     else
       @collection().append(data.comment)
-      location.reload()
+      audio = new Audio('<%= asset_path("media/water.mp3") %>')
+      audio.play()
 
 
   followCurrentWorker: ->
