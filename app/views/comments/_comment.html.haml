@@ -4,4 +4,4 @@
           data: { confirm: t('comment.confirm') }, class: 'btn btn-danger', style: 'display: none;'
   %article{'data-user-id' => comment.user.id, 'data-possition' => comment.position, 'data-created-at' => comment.created_at}
     %h4= "# #{comment.user.nickname}"
-    %p= comment.content
+    %p= highlight_links(comment.content)
