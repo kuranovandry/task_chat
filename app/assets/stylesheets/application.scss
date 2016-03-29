@@ -3,10 +3,10 @@
 @import "bootstrap";
 @import 'new-task';
 body {
-  padding:70px;
+  padding: 5px;
 }
 .worker {
-  width: 50%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -25,4 +25,8 @@ section {
 
 .delte_button{
   float: right
+}
+
+article {
+  padding: 5px;
 }
